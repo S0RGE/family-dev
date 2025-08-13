@@ -60,15 +60,13 @@ export default defineConfig((/* ctx */) => {
       // polyfillModulePreload: true,
       // distDir
 
-      extendViteConf (viteConf) {
+      extendViteConf(viteConf) {
         viteConf.resolve = viteConf.resolve || {};
         viteConf.resolve.alias = {
           ...viteConf.resolve.alias,
-          '@': path.resolve(__dirname, 'src')
+          '@': path.resolve(__dirname, 'src'),
         };
-        viteConf.resolve.extensions = [
-          '.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue'
-        ];
+        viteConf.resolve.extensions = ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue'];
       },
       // viteVuePluginOptions: {},
 
@@ -84,7 +82,6 @@ export default defineConfig((/* ctx */) => {
           },
           { server: false },
         ],
-
       ],
     },
 
