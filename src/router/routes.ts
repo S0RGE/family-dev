@@ -9,9 +9,19 @@ const withMainLayout = (children: RouteRecordRaw[]): RouteRecordRaw => ({
 const routes: RouteRecordRaw[] = [
   withMainLayout([
     { path: '', name: 'home', component: () => import('pages/IndexPage.vue') },
-    { path: 'treasure', name: 'treasure', component: () => import('pages/treasures/Treasure.vue') },
-    { path: 'quests', name: 'quests', component: () => import('pages/quests/Quests.vue') },
+    {
+      path: 'treasure',
+      name: 'treasure',
+      component: () => import('pages/treasures/TreasurePage.vue'),
+    },
+    { path: 'quests', name: 'quests', component: () => import('pages/quests/QuestsPage.vue') },
   ]),
+  { path: '/login', name: 'login', component: () => import('pages/login/LoginPage.vue') },
+  {
+    path: '/registration',
+    name: 'registration',
+    component: () => import('pages/registration/RegistrationPage.vue'),
+  },
 
   // Always leave this as last one,
   // but you can also remove it
